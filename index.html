@@ -15,25 +15,26 @@
   </head>
   <body>
     <header id="header">
-      <h1>Super Meme Battle</h1>
-      <button id="start" class="btn-3d">Start</button>
+      <h1 class="insideHeader">Super Meme Battle</h1>
+      <button id="start" class="btn-3d" class="insideHeader">Start</button>
     </header>
 
     <section id="board"></section>
     <div id="mainGame">
-      <div class="container">
+      <div class="container jogador">
         <div class="progress-bar">Attack!</div>
+        <hr></hr>
+        <progress id="health" value="10" max="10"></progress>
+        
+        <img src="./images/1.jpg" alt="meme">
       </div>
       <hr />
-      <div class="container">
+      <div class="container oponente">
         <div class="progress-bar">Attack!</div>
-      </div>
-      <div>
-        <progress id="health" value="100" max="100"></progress>
-      </div>
-
-      <div>
-        <progress id="health" value="100" max="100"></progress>
+        <hr></hr>
+        <progress id="health" value="10" max="10"></progress>
+        <hr></hr>
+        <img src="./images/1.jpg" alt="meme">
       </div>
     </div>
 

@@ -21,6 +21,17 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.insideHeader {
+  align-items: center;
+}
+
 .btn-3d {
   top: 0;
   left: 0;
@@ -118,13 +129,8 @@ a.btn-3d i {
   display: none;
 }
 
-.card {
-  width: 80px;
-  height: 80px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 8px;
-  border: 4px double black;
+.show {
+  display: block;
 }
 
 #board {
@@ -133,13 +139,27 @@ a.btn-3d i {
   align-items: center;
 }
 
+.card {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  border: 4px double black;
+  align-items: center;
+}
+
 #mainGame {
+  display: flex;
+
   background-image: url(./images/battlebgroute_by_aveontrainer_ddpvmlj.png);
   background-size: cover;
   height: 500px;
   width: 900px;
   border: solid 3px black;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -148,13 +168,14 @@ a.btn-3d i {
   position: relative;
   width: 200px;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .container .progress-bar {
   position: absolute;
   height: 100%;
   background-color: #0fd439;
-  animation: progress-animation 2s infinite;
+  animation: progress-animation 4s infinite;
   border-radius: 10px;
   border: 2px solid black;
   font-size: 10px;
@@ -172,4 +193,15 @@ a.btn-3d i {
 progress {
   width: 200px;
   height: 20px;
+}
+
+.oponente img {
+}
+.health {
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
 }

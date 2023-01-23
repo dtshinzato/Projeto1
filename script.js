@@ -1,7 +1,7 @@
 const board = document.getElementById("board");
 const header = document.getElementById("header"); // cabeçalho
 const start = document.getElementById("start"); // botão Start
-const personagem = document.getElementsByClassName("personagem"); //
+const personagem = document.getElementsByClassName("card personagem"); //
 const health = document.getElementById("health");
 
 start.addEventListener("click", () => {
@@ -13,6 +13,7 @@ start.addEventListener("click", () => {
 
 personagem.addEventListener("click", () => {
   // escolher personagem e adicionar as casses de botão para estilizar
+  console.log(Ola);
   const confirmCharacter = document.createElement("button");
   confirmCharacter.classList.add("confirmButton", "btn-3d");
   board.appendChild(confirmCharacter); // no fim adicionar o botão ao final do tabuleiro
