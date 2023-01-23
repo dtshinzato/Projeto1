@@ -18,4 +18,16 @@ class Game {
       card.appendChild(img); //atribuir cada div com uma imagem
     }
   }
+
+  // selectPlayer(){
+  //    document.getElementByClass('personagem').onclick = (event)=>{
+  //     const selecionado = event.target;
+
+  //    }
+
+  // //         document.getElementByClass('card').onclick =console.log(personagem)
+
+  // // //     img.setAttribute("src", `./images/${counter}.jpg`);
+  // //   }
+  // }
 }

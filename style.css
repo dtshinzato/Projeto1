@@ -150,7 +150,7 @@ a.btn-3d i {
 }
 
 #mainGame {
-  display: flex;
+  display: none;
 
   background-image: url(./images/battlebgroute_by_aveontrainer_ddpvmlj.png);
   background-size: cover;
@@ -193,11 +193,6 @@ a.btn-3d i {
 progress {
   width: 200px;
   height: 20px;
-}
-
-.oponente img {
-}
-.health {
 }
 
 img {
