@@ -16,6 +16,10 @@ class Game {
       const img = document.createElement("img"); // criar uma img
       img.setAttribute("src", `./images/${counter}.jpg`); // e rotacionar para cada contador ser uma img
       card.appendChild(img); //atribuir cada div com uma imagem
+      oponente.setAttribute(
+        "src",
+        `./images/${Math.floor(Math.random() * (10 - 1 + 1)) + 1}.jpg`
+      ); // Pegando um oponente aleatóriamente
     }
   }
 
