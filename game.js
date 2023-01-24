@@ -15,23 +15,41 @@ class Game {
 
       const img = document.createElement("img"); // criar uma img
       img.setAttribute("src", `./images/${counter}.jpg`); // e rotacionar para cada contador ser uma img
+      card.setAttribute("dataimg", counter);
       card.appendChild(img); //atribuir cada div com uma imagem
-      oponente.setAttribute(
-        "src",
-        `./images/${Math.floor(Math.random() * (10 - 1 + 1)) + 1}.jpg`
-      ); // Pegando um oponente aleatóriamente
+      this.createOponent();
     }
   }
 
-  // selectPlayer(){
-  //    document.getElementByClass('personagem').onclick = (event)=>{
-  //     const selecionado = event.target;
+  createOponent() {
+    oponente.setAttribute(
+      "src",
+      `./images/${Math.floor(Math.random() * (10 - 1 + 1)) + 1}.jpg`
+    ); // Pegando um oponente aleatóriamente
+  }
 
-  //    }
+  partida() {
+    const oponentHealth = document.getElementById("health-oponent");
+    const playerHealth = document.getElementById("health-player");
+    const jogoPrincipal = document.getElementById("mainGame");
+    let gameOver = false;
+    let win = false;
 
-  // //         document.getElementByClass('card').onclick =console.log(personagem)
+    setInterval(() => {
+      playerHealth.value =
+        playerHealth.value - (Math.floor(Math.random() * 3) + 1);
+      oponentHealth.value =
+        oponentHealth.value - (Math.floor(Math.random() * 3) + 1);
 
-  // // //     img.setAttribute("src", `./images/${counter}.jpg`);
-  // //   }
-  // }
+      console.log(playerHealth.value);
+      if (playerHealth.value <= 0 && !gameOver) {
+        gameOver = true;
+        jogoPrincipal.style.display = "none";
+        return window.alert("Game Over");
+      } else if (oponentHealth.value <= 0 && !win) {
+        win = true;
+        return window.alert("Você ganhou!!!");
+      }
+    }, 4000);
+  }
 }

@@ -13,38 +13,34 @@ start.addEventListener("click", () => {
   const game = new Game();
   game.genSelection(board);
 
-  let confirmar;
-  for (let i = 0; i < personagem.length; i++) {
-    personagem[i].addEventListener("click", () => {
-      if (!confirmar) {
-        confirmar = document.createElement("button");
-        confirmar.classList.add("btn-3d");
-        confirmar.innerHTML = "Confirm your character";
-        confirmBtn.appendChild(confirmar); // no fim adicionar o botão ao final do tabuleiro
+  let selecionado;
 
-        confirmar.addEventListener("click", () => {
-          let jogoPrincipal = document.getElementById("mainGame");
-          jogoPrincipal.style.display = "flex";
-          board.style.display = "none";
-          confirmBtn.style.display = "none";
-          const personagemSelecionado = document.addEventListener(
-            "click",
-            () => {
-              console.log(personagemSelecionado);
-            }
-          );
-        });
-      }
+  for (let i = 0; i < personagem.length; i++) {
+    personagem[i].addEventListener("click", (event) => {
+      selecionado = event.currentTarget;
     });
   }
 
-  jogador.setAttribute(
-    "src",
-    `./images/${Math.floor(Math.random() * (10 - 1 + 1)) + 1}.jpg`
-  );
+  let confirmar = document.createElement("button");
+  confirmar.classList.add("btn-3d");
+  confirmar.innerHTML = "Confirm your character";
+  confirmBtn.appendChild(confirmar); // no fim adicionar o botão ao final do tabuleiro
+
+  confirmar.addEventListener("click", () => {
+    console.log("click", selecionado.getAttribute("dataimg"));
+    if (!selecionado) {
+      return;
+    }
+
+    let jogoPrincipal = document.getElementById("mainGame");
+    jogoPrincipal.style.display = "flex";
+    board.style.display = "none";
+    confirmBtn.style.display = "none";
+
+    jogador.setAttribute(
+      "src",
+      `./images/${selecionado.getAttribute("dataimg")}.jpg`
+    );
+    game.partida();
+  });
 });
-
-// health.value -= 10;
-
-// Math.random()*10
-// if

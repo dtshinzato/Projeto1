@@ -150,6 +150,12 @@ a.btn-3d i {
   border-radius: 8px;
   border: 4px double black;
   align-items: center;
+  cursor: pointer;
+  
+}
+
+.card:focus { 
+  background-color: red;
 }
 
 #mainGame {
@@ -208,3 +214,4 @@ img {
 #confirmBtn {
   margin-top: 200px;
 }
+
