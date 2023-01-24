@@ -28,6 +28,29 @@ class Game {
     ); // Pegando um oponente aleatóriamente
   }
 
+  // recompensa1(){
+  //   const premio1 = document.createElement('button');
+  //   premio1.classList.add('premio')
+  //   premio1.innerHTML = "Mais vida!";
+
+  // }
+  // recompensa2(){
+  //   const premio2 = document.createElement('button');
+  //   premio2.classList.add('premio')
+  //   premio2.innerHTML = "Mais dano!";
+  // }
+
+  // oponenteUp(){
+
+  //}
+
+  retornarAoInicio() {
+    const retornar = document.createElement("button");
+    retornar.classList.add("btn-3d");
+    retornar.innerHTML = "Voltar a seleção";
+    retornarBtn.appendChild(retornar);
+  }
+
   partida() {
     const oponentHealth = document.getElementById("health-oponent");
     const playerHealth = document.getElementById("health-player");
@@ -35,20 +58,31 @@ class Game {
     let gameOver = false;
     let win = false;
 
-    setInterval(() => {
+    let duracaoJogo = setInterval(() => {
       playerHealth.value =
-        playerHealth.value - (Math.floor(Math.random() * 3) + 1);
+        playerHealth.value - (Math.floor(Math.random() * 3) + 2);
       oponentHealth.value =
         oponentHealth.value - (Math.floor(Math.random() * 3) + 1);
 
       console.log(playerHealth.value);
       if (playerHealth.value <= 0 && !gameOver) {
         gameOver = true;
-        jogoPrincipal.style.display = "none";
+        // jogoPrincipal.style.display = "none";
+        this.retornarAoInicio();
+        clearInterval(duracaoJogo);
+        playerHealth.value = 10;
+        oponentHealth.value = 10;
         return window.alert("Game Over");
       } else if (oponentHealth.value <= 0 && !win) {
         win = true;
+        clearInterval(duracaoJogo);
+        playerHealth.value = 10;
+        oponentHealth.value = 10;
         return window.alert("Você ganhou!!!");
+
+        // recompensa1()
+        // recompensa2()
+        // oponenteUp()
       }
     }, 4000);
   }
