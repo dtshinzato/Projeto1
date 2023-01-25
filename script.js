@@ -8,6 +8,7 @@ const oponente = document.getElementById("oponente");
 const jogador = document.getElementById("jogador");
 const jogoPrincipal = document.getElementById("mainGame");
 const retornarBtn = document.getElementById("retornarBtn");
+let contador = 0
 
 // let selecao = document.querySelectorAll('card');
 

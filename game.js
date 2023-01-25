@@ -45,10 +45,16 @@ class Game {
   //}
 
   retornarAoInicio() {
-    const retornar = document.createElement("button");
-    retornar.classList.add("btn-3d");
-    retornar.innerHTML = "Voltar a seleção";
-    retornarBtn.appendChild(retornar);
+    
+    if (contador===0){
+      const retornar = document.createElement("button");
+      retornar.classList.add("btn-3d");
+      retornar.innerHTML = "Voltar a seleção";
+      retornarBtn.appendChild(retornar);
+    }
+    retornarBtn.style.display = "block";
+    contador ++
+
   }
 
   partida() {
@@ -60,7 +66,7 @@ class Game {
 
     let duracaoJogo = setInterval(() => {
       playerHealth.value =
-        playerHealth.value - (Math.floor(Math.random() * 3) + 2);
+        playerHealth.value - (Math.floor(Math.random() * 3) + 1);
       oponentHealth.value =
         oponentHealth.value - (Math.floor(Math.random() * 3) + 1);
 
@@ -78,6 +84,7 @@ class Game {
         clearInterval(duracaoJogo);
         playerHealth.value = 10;
         oponentHealth.value = 10;
+        this.retornarAoInicio();
         return window.alert("Você ganhou!!!");
 
         // recompensa1()
